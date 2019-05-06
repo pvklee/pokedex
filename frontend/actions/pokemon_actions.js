@@ -7,8 +7,8 @@ export const receiveAllPokemon = (pokemon) => ({
   pokemon
 })
 
-// export const fetchAllPokemon = () => (dispatch) => {
-//   const getSuccess = pokemon => console.log(pokemon);
-//   return(APIUtil.fetchAllPokemon())
-//   // APIUtil.fetchAllPokemon().then((pokemon) => dispatch(receiveAllPokemon(pokemon)));
-// }
+//async
+
+export const fetchAllPokemon = () => (dispatch) => (
+  APIUtil.fetchAllPokemon().then((pokemon) => dispatch(receiveAllPokemon(pokemon)))
+)
