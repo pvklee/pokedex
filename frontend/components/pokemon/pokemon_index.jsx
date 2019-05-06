@@ -7,7 +7,7 @@ export default class PokemonIndex extends React.Component {
   
   render(){
     const pokemonList = this.props.pokemon.map(poke=>(
-      <li>{poke.name}</li>
+      <li>{poke.name}<img src={poke.image_url}/></li>
     ))
     return(
       <ul>
