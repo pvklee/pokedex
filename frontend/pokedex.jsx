@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import configureStore from './store/store'
 import {requestAllPokemon} from './actions/pokemon_actions'
 import {selectAllPokemon} from './reducers/selectors'
+import Root from './components/root'
 
 document.addEventListener('DOMContentLoaded', (e)=>{
   const root = document.getElementById('root');
@@ -15,5 +16,5 @@ document.addEventListener('DOMContentLoaded', (e)=>{
   window.selectAllPokemon = selectAllPokemon;
   //--- debugging only
 
-  ReactDOM.render(<h1>HI</h1>, root)
+  ReactDOM.render(<Root store={store}/>, root)
 });
