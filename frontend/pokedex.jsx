@@ -2,6 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import configureStore from './store/store'
 import {requestAllPokemon, requestSinglePokemon} from './actions/pokemon_actions'
+
+import {createPokemon} from './util/api_util'
+
 import {selectAllPokemon} from './reducers/selectors'
 import Root from './components/root'
 
@@ -15,6 +18,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
   window.requestAllPokemon = requestAllPokemon;
   window.selectAllPokemon = selectAllPokemon;
   window.requestSinglePokemon = requestSinglePokemon;
+  window.createPokemon = createPokemon;
   //--- debugging only
 
   ReactDOM.render(<Root store={store}/>, root)
