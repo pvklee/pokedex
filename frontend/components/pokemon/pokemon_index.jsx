@@ -3,6 +3,7 @@ import PokemonIndexItem from './pokemon_index_item'
 import { Route } from 'react-router-dom';
 import PokemonDetailContainer from './pokemon_detail_container'
 import PokemonFormContainer from './pokemon_form_container'
+import LoadingIcon from './loading_icon'
 
 export default class PokemonIndex extends React.Component {
   componentDidMount(){
@@ -10,8 +11,11 @@ export default class PokemonIndex extends React.Component {
   } 
   
   render(){
-    const pokemonList = this.props.pokemon.map(poke=>(
-      <PokemonIndexItem poke={poke}/>
+    const { pokemon, loading } = this.props;
+    if (loading) { return <LoadingIcon />; }
+
+    const pokemonList = pokemon.map(poke=>(
+      <PokemonIndexItem key={poke.id} poke={poke}/>
     ))
     return(
       <div>

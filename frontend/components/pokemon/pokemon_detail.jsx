@@ -2,7 +2,7 @@ import React from 'react'
 import {Route} from 'react-router-dom'
 import ItemDetailContainer from '../items/item_detail_container'
 import Item from '../items/item'
-
+import LoadingIcon from './loading_icon'
 
 export default class PokemonDetail extends React.Component {
   componentDidMount(){
@@ -16,8 +16,10 @@ export default class PokemonDetail extends React.Component {
   }
   
   render(){
-    const {pokemon, items} = this.props;
+    const {pokemon, items, loading} = this.props;
     
+    if (loading) { return <LoadingIcon />; }
+
     if (!pokemon) return null;
 
     const itemsList = items.map(item=>(
