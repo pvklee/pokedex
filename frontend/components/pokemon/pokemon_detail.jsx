@@ -1,4 +1,6 @@
 import React from 'react'
+import {Link, Route} from 'react-router-dom'
+import ItemDetailContainer from '../items/item_detail_container'
 
 export default class PokemonDetail extends React.Component {
   componentDidMount(){
@@ -18,9 +20,9 @@ export default class PokemonDetail extends React.Component {
 
     const itemsList = items.map(item=>(
       <li key={`${item.name}`}>
-        {/* <Link to={`/pokemon/${pokemon.id}/items/${item.id}`}> */}
+        <Link to={`/pokemon/${pokemon.id}/items/${item.id}`}>
           {item.name};
-        {/* </Link> */}
+        </Link>
       </li>
     ))
 
@@ -28,6 +30,7 @@ export default class PokemonDetail extends React.Component {
       <ul>
         <li>{pokemon.name}</li>
         {itemsList}
+        <li><Route path='/pokemon/:pokemonId/items/:itemId' component={ItemDetailContainer} /></li>
       </ul>
     )
   }
