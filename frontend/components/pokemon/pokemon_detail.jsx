@@ -3,6 +3,7 @@ import {Route} from 'react-router-dom'
 import ItemDetailContainer from '../items/item_detail_container'
 import Item from '../items/item'
 
+
 export default class PokemonDetail extends React.Component {
   componentDidMount(){
     this.props.requestSinglePokemon(this.props.match.params.pokemonId);

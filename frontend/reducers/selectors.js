@@ -9,3 +9,7 @@ export const selectPokeItems = (state, pokemon) => {
 export const selectPokeItem = (state, id) => {
   return state.entities.items[id];
 }
+
+export const selectAllErrors = state => (
+  Object.values(state.ui.errors)
+)
